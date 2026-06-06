@@ -1,0 +1,266 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#efe9d7;
+    font-family:'Inter',sans-serif;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+    background:#0f4a37;
+    padding:20px 18px 30px;
+    color:#fff;
+}
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:38px;
+}
+
+.back-btn{
+    color:#fff;
+    text-decoration:none;
+    font-size:34px;
+    font-weight:300;
+    line-height:1;
+}
+
+.top-bar h1{
+    font-family:'Cinzel',serif;
+    font-size:26px;
+    font-weight:600;
+    text-transform:lowercase;
+    letter-spacing:1px;
+}
+
+.hero-center{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:14px;
+}
+
+.line{
+    flex:1;
+    height:2px;
+    background:#7f7b4e;
+    opacity:0.7;
+}
+
+.icons{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:30px;
+}
+
+.sub-text{
+    text-align:center;
+    color:#d2d2d2;
+    font-family:'Cinzel',serif;
+    font-size:15px;
+    font-style:italic;
+    letter-spacing:1px;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.container{
+    padding:26px 0 18px;
+}
+
+/* ================= HEADER ================= */
+
+.subject-header{
+    padding:0 20px;
+    margin-bottom:16px;
+}
+
+.subject-header h2{
+    color:#9a4c28;
+    font-family:'Cinzel',serif;
+    font-size:20px;
+    letter-spacing:4px;
+    font-weight:700;
+}
+
+.underline{
+    width:62px;
+    height:4px;
+    background:#c79d4f;
+    margin:10px 0 16px;
+}
+
+.subject-header p{
+    color:#8e8372;
+    font-size:15px;
+    line-height:1.4;
+}
+
+/* ================= SUBJECT LIST ================= */
+
+.subject-list{
+    margin-top:4px;
+}
+
+.subject-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 20px;
+    border-top:1px solid #d7ccb1;
+    background:#efe9d7;
+}
+
+.subject-card:last-child{
+    border-bottom:1px solid #d7ccb1;
+}
+
+/* ================= LEFT ================= */
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.number{
+    width:22px;
+    text-align:center;
+    font-family:'Cinzel',serif;
+    color:#9d9689;
+    font-size:14px;
+    font-weight:600;
+}
+
+.divider{
+    width:1px;
+    height:52px;
+    background:#cdbd99;
+}
+
+.icon{
+    font-size:28px;
+    margin-left:0;
+}
+
+.content{
+    display:flex;
+    flex-direction:column;
+}
+
+.content h3{
+    font-size:15px;
+    font-weight:600;
+    color:#18120d;
+    margin-bottom:4px;
+    text-transform:lowercase;
+    line-height:1.1;
+}
+
+.content p{
+    font-size:11px;
+    color:#8f826d;
+}
+
+/* ================= RIGHT ================= */
+
+.right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.count{
+    width:40px;
+    height:40px;
+    border:2px solid #2d6a57;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#2d6a57;
+    font-size:14px;
+    font-weight:700;
+    background:transparent;
+}
+
+.arrow{
+    font-size:24px;
+    color:#8f826d;
+    font-weight:300;
+    margin-top:-1px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .hero{
+        padding:18px 16px 28px;
+    }
+
+    .top-bar{
+        margin-bottom:34px;
+    }
+
+    .top-bar h1{
+        font-size:24px;
+    }
+
+    .icons{
+        font-size:28px;
+    }
+
+    .subject-header{
+        padding:0 18px;
+    }
+
+    .subject-header h2{
+        font-size:18px;
+    }
+
+    .subject-header p{
+        font-size:14px;
+    }
+
+    .subject-card{
+        padding:16px 18px;
+    }
+
+    .divider{
+        height:48px;
+    }
+
+    .icon{
+        font-size:26px;
+    }
+
+    .content h3{
+        font-size:14px;
+    }
+
+    .content p{
+        font-size:10px;
+    }
+
+    .count{
+        width:38px;
+        height:38px;
+        font-size:13px;
+    }
+
+    .arrow{
+        font-size:22px;
+    }
+}
