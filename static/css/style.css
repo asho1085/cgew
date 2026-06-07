@@ -5,18 +5,20 @@
 }
 
 body{
-    background:#efe7d6;
+    background:#f2ead5;
     font-family:'Inter',sans-serif;
     overflow-x:hidden;
+    color:#18120d;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    background:#8e3d18;
+    background:#1d4630;
     color:#fff;
     text-align:center;
     padding:30px 20px;
+    box-shadow:0 5px 14px rgba(39,30,16,0.24);
 }
 
 .top-line{
@@ -42,7 +44,7 @@ body{
 }
 
 .hero p{
-    color:#e8cfaa;
+    color:rgba(255,255,255,0.7);
     font-size:15px;
     margin-bottom:15px;
 }
@@ -60,7 +62,7 @@ body{
 /* ================= NOTICE ================= */
 
 .notice{
-    background:#17120d;
+    background:#18120d;
     color:#fff;
     text-align:center;
     padding:14px;
@@ -94,7 +96,7 @@ body{
 
 .section-title h3{
     font-family:'Cinzel',serif;
-    color:#8e3d18;
+    color:#8e4228;
     font-size:15px;
     letter-spacing:2px;
 }
@@ -112,16 +114,17 @@ body{
 .card-link{
     text-decoration:none;
     display:block;
+    color:inherit;
 }
 
 /* ================= CARD ================= */
 
 .card{
-    border-radius:12px;
+    border-radius:10px;
     padding:16px;
     color:#fff;
     box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
     min-height:160px;
 
     display:flex;
@@ -130,7 +133,13 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.18);
+}
+
+.card-link:focus-visible .card{
+    outline:3px solid #c79d4f;
+    outline-offset:3px;
 }
 
 /* ================= CARD COLORS ================= */
@@ -178,20 +187,22 @@ body{
 
 /* ================= BUTTON ================= */
 
-.card button{
+.card-badge{
     background:none;
     border:1px solid rgba(255,255,255,0.5);
     color:#fff;
     padding:7px 10px;
     border-radius:6px;
     font-size:10px;
-    cursor:pointer;
     width:fit-content;
     letter-spacing:1px;
     transition:0.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.card button:hover{
+.card-link:hover .card-badge{
     background:#fff;
     color:#000;
 }
@@ -251,7 +262,7 @@ body{
         font-size:11px;
     }
 
-    .card button{
+    .card-badge{
         font-size:9px;
         padding:6px 9px;
     }

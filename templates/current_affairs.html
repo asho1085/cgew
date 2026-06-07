@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Affairs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            min-height:100vh;
+            background:#f2ead5;
+            color:#18120d;
+            font-family:'Inter',sans-serif;
+        }
+
+        .screen{
+            min-height:100vh;
+            background:#f2ead5;
+            padding-bottom:28px;
+        }
+
+        .top-panel{
+            background:#1d4630;
+            color:#fff;
+            padding:20px 32px 28px;
+            box-shadow:0 5px 14px rgba(39,30,16,0.24);
+        }
+
+        .status-bar{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            color:rgba(255,255,255,0.82);
+            font-size:22px;
+            font-weight:700;
+            line-height:1;
+            margin-bottom:42px;
+        }
+
+        .status-right{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-size:18px;
+        }
+
+        .network{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:1px;
+            font-size:10px;
+            line-height:0.85;
+        }
+
+        .signal{
+            display:flex;
+            align-items:flex-end;
+            gap:3px;
+            height:18px;
+        }
+
+        .signal span{
+            width:4px;
+            background:rgba(255,255,255,0.82);
+            border-radius:3px;
+        }
+
+        .signal span:nth-child(1){ height:6px; }
+        .signal span:nth-child(2){ height:10px; }
+        .signal span:nth-child(3){ height:14px; }
+        .signal span:nth-child(4){ height:18px; }
+
+        .battery{
+            width:18px;
+            height:28px;
+            border:2px solid rgba(255,255,255,0.82);
+            border-radius:3px;
+            position:relative;
+        }
+
+        .battery::before{
+            content:"";
+            position:absolute;
+            top:-5px;
+            left:4px;
+            width:6px;
+            height:3px;
+            background:rgba(255,255,255,0.82);
+            border-radius:2px 2px 0 0;
+        }
+
+        .battery::after{
+            content:"";
+            position:absolute;
+            left:2px;
+            right:2px;
+            bottom:2px;
+            height:52%;
+            background:rgba(255,255,255,0.82);
+            border-radius:2px;
+        }
+
+        .page-title{
+            display:flex;
+            align-items:center;
+            gap:70px;
+        }
+
+        .back-btn{
+            color:#fff;
+            text-decoration:none;
+            font-size:48px;
+            line-height:1;
+            font-weight:300;
+            margin-top:-4px;
+            width:44px;
+            height:44px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:8px;
+            transition:background 0.2s ease;
+        }
+
+        .back-btn:hover,
+        .back-btn:focus-visible{
+            background:rgba(255,255,255,0.12);
+            outline:none;
+        }
+
+        .title-copy h1{
+            font-family:'Cinzel',serif;
+            font-size:32px;
+            line-height:0.95;
+            letter-spacing:0;
+            text-transform:lowercase;
+        }
+
+        .title-copy p{
+            color:rgba(255,255,255,0.66);
+            font-family:'Cinzel',serif;
+            font-size:21px;
+            font-weight:700;
+            line-height:1.1;
+            text-transform:lowercase;
+        }
+
+        .content{
+            padding:40px 32px 26px;
+        }
+
+        .notes-card{
+            border:2px solid #b7b39d;
+            border-radius:10px;
+            padding:30px 28px;
+            margin-bottom:46px;
+            background:rgba(255,255,255,0.12);
+        }
+
+        .notes-label{
+            display:flex;
+            align-items:center;
+            gap:20px;
+            color:#1d4630;
+            font-family:'Cinzel',serif;
+            font-size:22px;
+            font-weight:700;
+            letter-spacing:6px;
+            line-height:1;
+            text-transform:uppercase;
+            margin-bottom:30px;
+        }
+
+        .notes-label::before{
+            content:"";
+            width:8px;
+            height:32px;
+            background:#1f634e;
+            flex:0 0 auto;
+        }
+
+        .notes-card h2{
+            font-family:'Cinzel',serif;
+            font-size:42px;
+            line-height:1;
+            font-weight:700;
+            text-transform:lowercase;
+        }
+
+        .illustration-title{
+            display:grid;
+            grid-template-columns:1fr auto 1fr;
+            align-items:center;
+            gap:22px;
+            color:#8e4228;
+            font-family:'Cinzel',serif;
+            font-size:18px;
+            font-weight:700;
+            letter-spacing:7px;
+            text-align:center;
+            text-transform:uppercase;
+            margin-bottom:38px;
+        }
+
+        .illustration-title::before,
+        .illustration-title::after{
+            content:"";
+            height:2px;
+            background:#c9b27d;
+        }
+
+        .image-frame{
+            border:3px solid #bba77e;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 3px 9px rgba(63,45,20,0.18);
+            background:#fff;
+        }
+
+        .image-frame img{
+            display:block;
+            width:100%;
+            height:auto;
+        }
+
+        @media(max-width:520px){
+            .top-panel{
+                padding:18px 32px 28px;
+            }
+
+            .content{
+                padding:40px 32px 24px;
+            }
+
+            .notes-card h2{
+                font-size:40px;
+            }
+        }
+
+        @media(max-width:390px){
+            .top-panel,
+            .content{
+                padding-left:20px;
+                padding-right:20px;
+            }
+
+            .page-title{
+                gap:34px;
+            }
+
+            .title-copy h1{
+                font-size:27px;
+            }
+
+            .notes-card{
+                padding:24px 22px;
+            }
+
+            .notes-label{
+                font-size:18px;
+                letter-spacing:4px;
+            }
+
+            .notes-card h2{
+                font-size:34px;
+            }
+
+            .illustration-title{
+                gap:14px;
+                font-size:15px;
+                letter-spacing:5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <header class="top-panel">
+
+
+            <div class="page-title">
+                <a href="/gn" class="back-btn" aria-label="Back to general awareness">&lt;</a>
+                <div class="title-copy">
+                    <h1>current affairs</h1>
+                    <p>general awareness</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="notes-card">
+                <p class="notes-label">Study Notes</p>
+                <h2>current affairs</h2>
+            </section>
+
+            <div class="illustration-title">
+                <span>Illustrations</span>
+            </div>
+
+            <figure class="image-frame">
+                <img src="/assets/caf.jpg" alt="Current affairs study notes">
+            </figure>
+
+            <figure class="image-frame">
+                <img src="/assets/caf2.jpg" alt="Current affairs monthly summary" loading="lazy">
+            </figure>
+        </main>
+    </div>
+</body>
+
+</html>
