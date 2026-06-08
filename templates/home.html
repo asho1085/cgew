@@ -4,20 +4,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGE - Crack Government Exams | RRB NTPC, SSC, UPSC Study Notes</title>
-    <meta name="description" content="CGE helps government exam aspirants browse RRB NTPC, SSC CGL, UPSC, and banking exam subjects, topics, and study notes in one place.">
+    <title>CGE - Government Exam Notes, RRB NTPC Notes and Preparation Guide</title>
+    <meta name="description" content="CGE provides government exam notes, RRB NTPC notes, current affairs study material, and practical guidance on how to crack government exams.">
     <link rel="canonical" href="https://cgew.onrender.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CGE">
     <meta property="og:title" content="CGE - Crack Government Exams">
     <meta property="og:description" content="Browse government exam subjects, topics, and study notes for RRB NTPC, SSC CGL, UPSC, and banking exams.">
     <meta property="og:url" content="https://cgew.onrender.com/">
+    <meta property="og:image" content="https://cgew.onrender.com/assets/cgelogo.png">
     <meta name="twitter:card" content="summary">
 
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/cgelogo.png">
+    <link rel="apple-touch-icon" href="/assets/cgelogo.png">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#f2ead5;
+            font-family:Inter,Segoe UI,Arial,sans-serif;
+            overflow-x:hidden;
+            color:#18120d;
+        }
+
+        .hero{
+            background:#1d4630;
+            color:#fff;
+            text-align:center;
+            padding:30px 20px;
+            box-shadow:0 5px 14px rgba(39,30,16,0.24);
+        }
+
+        .top-line{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            color:#d7ab67;
+            margin-bottom:15px;
+        }
+
+        .top-line span{
+            width:70px;
+            height:1px;
+            background:#d7ab67;
+        }
+
+        .hero h1{
+            font-family:Georgia,Times New Roman,serif;
+            font-size:42px;
+            margin-bottom:8px;
+            letter-spacing:2px;
+        }
+
+        .hero p{
+            color:rgba(255,255,255,0.7);
+            font-size:15px;
+            margin-bottom:15px;
+        }
+
+        .badge{
+            display:inline-block;
+            border:1px solid #d7ab67;
+            color:#d7ab67;
+            padding:8px 16px;
+            font-size:11px;
+            letter-spacing:2px;
+            border-radius:6px;
+        }
+
+        .notice{
+            background:#18120d;
+            color:#fff;
+            text-align:center;
+            padding:14px;
+            font-size:13px;
+            line-height:1.5;
+        }
+
+        .container{
+            width:92%;
+            margin:auto;
+            padding:35px 0;
+        }
+
+        .section-title{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            margin-bottom:25px;
+        }
+
+        .section-title span{
+            width:60px;
+            height:2px;
+            background:#c5ae87;
+        }
+
+        .section-title h2{
+            font-family:Georgia,Times New Roman,serif;
+            color:#8e4228;
+            font-size:15px;
+            letter-spacing:2px;
+        }
+
+        .exam-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:14px;
+        }
+
+        .card-link{
+            text-decoration:none;
+            display:block;
+            color:inherit;
+        }
+
+        .card{
+            border-radius:10px;
+            padding:16px;
+            color:#fff;
+            box-shadow:0 6px 15px rgba(0,0,0,0.15);
+            transition:transform 0.2s ease, box-shadow 0.2s ease;
+            min-height:160px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+
+        .card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 10px 20px rgba(0,0,0,0.18);
+        }
+
+        .card-link:focus-visible .card{
+            outline:3px solid #c79d4f;
+            outline-offset:3px;
+        }
+
+        .exam-grid .card-link:nth-child(1) .card{
+            background:#124633;
+            border-top:4px solid #caa160;
+        }
+
+        .exam-grid .card-link:nth-child(2) .card{
+            background:#1f3c88;
+            border-top:4px solid #7fb3ff;
+        }
+
+        .exam-grid .card-link:nth-child(3) .card{
+            background:#6b1e3b;
+            border-top:4px solid #ff9db7;
+        }
+
+        .exam-grid .card-link:nth-child(4) .card{
+            background:#5a3b12;
+            border-top:4px solid #f5c16c;
+        }
+
+        .icon{
+            font-size:24px;
+            margin-bottom:12px;
+        }
+
+        .card h3{
+            font-family:Georgia,Times New Roman,serif;
+            font-size:18px;
+            margin-bottom:6px;
+            line-height:1.3;
+        }
+
+        .card p{
+            color:#e5e5e5;
+            font-size:12px;
+            line-height:1.5;
+            margin-bottom:16px;
+        }
+
+        .card-badge{
+            background:none;
+            border:1px solid rgba(255,255,255,0.5);
+            color:#fff;
+            padding:7px 10px;
+            border-radius:6px;
+            font-size:10px;
+            width:fit-content;
+            letter-spacing:1px;
+            transition:0.3s;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .card-link:hover .card-badge{
+            background:#fff;
+            color:#000;
+        }
+
+        .seo-links{
+            margin-top:28px;
+            padding-top:24px;
+            border-top:1px solid #d0c3a4;
+        }
+
+        .seo-links h2{
+            font-family:Georgia,Times New Roman,serif;
+            color:#8e4228;
+            font-size:22px;
+            margin-bottom:14px;
+        }
+
+        .guide-list{
+            display:grid;
+            gap:12px;
+        }
+
+        .guide-link{
+            display:block;
+            padding:14px 16px;
+            background:#fffaf0;
+            border:1px solid #d0c3a4;
+            border-radius:8px;
+            color:#18120d;
+            text-decoration:none;
+        }
+
+        .guide-link strong{
+            display:block;
+            margin-bottom:4px;
+        }
+
+        .guide-link span{
+            color:#6b6258;
+            font-size:13px;
+        }
+
+        @media(max-width:768px){
+            .hero{
+                padding:28px 18px;
+            }
+
+            .hero h1{
+                font-size:38px;
+            }
+
+            .hero p{
+                font-size:14px;
+            }
+
+            .notice{
+                font-size:12px;
+                padding:13px;
+            }
+
+            .container{
+                width:94%;
+                padding:30px 0;
+            }
+
+            .section-title{
+                margin-bottom:22px;
+            }
+
+            .section-title h2{
+                font-size:13px;
+            }
+
+            .exam-grid{
+                gap:12px;
+            }
+
+            .card{
+                padding:14px;
+                min-height:150px;
+            }
+
+            .icon{
+                font-size:22px;
+            }
+
+            .card h3{
+                font-size:16px;
+            }
+
+            .card p{
+                font-size:11px;
+            }
+
+            .card-badge{
+                font-size:9px;
+                padding:6px 9px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "CGE",
+            "alternateName": "Crack Government Exams",
+            "url": "https://cgew.onrender.com/",
+            "logo": "https://cgew.onrender.com/assets/cgelogo.png"
+        }
+    </script>
 </head>
 
 <body>
@@ -41,7 +335,7 @@
     <main class="container">
         <div class="section-title">
             <span></span>
-            <h3>SELECT YOUR EXAMINATION</h3>
+            <h2>SELECT YOUR EXAMINATION</h2>
             <span></span>
         </div>
 
@@ -49,7 +343,7 @@
             <a href="/subjects" class="card-link">
                 <article class="card">
                     <div class="icon" aria-hidden="true">&#128646;</div>
-                    <h4>RRB NTPC</h4>
+                    <h3>RRB NTPC</h3>
                     <p>Railway Recruitment Board</p>
                     <span class="card-badge">3 SUBJECTS</span>
                 </article>
@@ -58,7 +352,7 @@
             <a href="/template-topic" class="card-link">
                 <article class="card">
                     <div class="icon" aria-hidden="true">&#128110;</div>
-                    <h4>SSC CGL</h4>
+                    <h3>SSC CGL</h3>
                     <p>Staff Selection Commission</p>
                     <span class="card-badge">5 SUBJECTS</span>
                 </article>
@@ -67,7 +361,7 @@
             <a href="/template-topic" class="card-link">
                 <article class="card">
                     <div class="icon" aria-hidden="true">&#127963;</div>
-                    <h4>UPSC</h4>
+                    <h3>UPSC</h3>
                     <p>Civil Services Examination</p>
                     <span class="card-badge">8 SUBJECTS</span>
                 </article>
@@ -76,11 +370,29 @@
             <a href="/template-topic" class="card-link">
                 <article class="card">
                     <div class="icon" aria-hidden="true">&#127974;</div>
-                    <h4>IBPS PO</h4>
+                    <h3>IBPS PO</h3>
                     <p>Bank Recruitment</p>
                     <span class="card-badge">4 SUBJECTS</span>
                 </article>
             </a>
+        </section>
+
+        <section class="seo-links" aria-label="Government exam preparation guides">
+            <h2>Government Exam Preparation Guides</h2>
+            <div class="guide-list">
+                <a class="guide-link" href="/how-to-crack-government-exam">
+                    <strong>How to Crack Government Exam</strong>
+                    <span>Study plan, revision method, and exam practice strategy.</span>
+                </a>
+                <a class="guide-link" href="/government-exam-notes">
+                    <strong>Government Exam Notes</strong>
+                    <span>Subject-wise notes for government exam preparation.</span>
+                </a>
+                <a class="guide-link" href="/rrb-ntpc-notes">
+                    <strong>RRB NTPC Notes</strong>
+                    <span>General Awareness and current affairs notes for RRB NTPC.</span>
+                </a>
+            </div>
         </section>
     </main>
 </body>

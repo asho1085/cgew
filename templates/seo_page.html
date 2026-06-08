@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <link rel="canonical" href="{{ site_url }}{{ page.canonical }}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CGE">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:url" content="{{ site_url }}{{ page.canonical }}">
+    <meta property="og:image" content="{{ site_url }}/assets/cgelogo.png">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" type="image/png" href="/assets/cgelogo.png">
+    <link rel="apple-touch-icon" href="/assets/cgelogo.png">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#f2ead5;
+            color:#18120d;
+            font-family:Inter,Segoe UI,Arial,sans-serif;
+            line-height:1.6;
+        }
+
+        .hero{
+            background:#1d4630;
+            color:#fff;
+            padding:28px 20px 32px;
+            box-shadow:0 5px 14px rgba(39,30,16,0.24);
+        }
+
+        .hero-inner,
+        .content{
+            width:min(920px,92%);
+            margin:auto;
+        }
+
+        .back-link{
+            display:inline-flex;
+            color:rgba(255,255,255,0.78);
+            text-decoration:none;
+            font-size:14px;
+            margin-bottom:22px;
+        }
+
+        .back-link:focus-visible{
+            outline:3px solid #c79d4f;
+            outline-offset:4px;
+        }
+
+        h1,
+        h2{
+            font-family:Georgia,Times New Roman,serif;
+            line-height:1.15;
+        }
+
+        h1{
+            font-size:clamp(30px,8vw,48px);
+            margin-bottom:12px;
+        }
+
+        .hero p{
+            max-width:720px;
+            color:rgba(255,255,255,0.78);
+            font-size:16px;
+        }
+
+        .content{
+            padding:34px 0 44px;
+        }
+
+        .section{
+            border-top:1px solid #d0c3a4;
+            padding:24px 0;
+        }
+
+        .section:first-child{
+            border-top:0;
+            padding-top:0;
+        }
+
+        h2{
+            color:#8e4228;
+            font-size:24px;
+            margin-bottom:10px;
+        }
+
+        .cta-row{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-top:18px;
+        }
+
+        .cta{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            min-height:44px;
+            padding:10px 14px;
+            border-radius:8px;
+            background:#1d4630;
+            color:#fff;
+            font-weight:700;
+            text-decoration:none;
+        }
+
+        .cta.secondary{
+            background:#8e4228;
+        }
+
+        .faq{
+            background:#fffaf0;
+            border:1px solid #d0c3a4;
+            border-radius:8px;
+            padding:18px;
+            margin-top:16px;
+        }
+
+        .faq h3{
+            font-size:16px;
+            margin-bottom:6px;
+        }
+
+        .faq + .faq{
+            margin-top:12px;
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {% for question, answer in page.faqs %}
+                {
+                    "@type": "Question",
+                    "name": {{ question|tojson }},
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": {{ answer|tojson }}
+                    }
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        }
+    </script>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <a class="back-link" href="/">Back to CGE</a>
+            <h1>{{ page.heading }}</h1>
+            <p>{{ page.intro }}</p>
+        </div>
+    </header>
+
+    <main class="content">
+        {% for heading, copy in page.sections %}
+        <section class="section">
+            <h2>{{ heading }}</h2>
+            <p>{{ copy }}</p>
+        </section>
+        {% endfor %}
+
+        <section class="section">
+            <h2>Start studying on CGE</h2>
+            <p>Browse exam subjects and current affairs notes for structured government exam preparation.</p>
+            <div class="cta-row">
+                <a class="cta" href="/subjects">Browse RRB NTPC subjects</a>
+                <a class="cta secondary" href="/current-affairs">Read current affairs notes</a>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Frequently asked questions">
+            <h2>Frequently Asked Questions</h2>
+            {% for question, answer in page.faqs %}
+            <article class="faq">
+                <h3>{{ question }}</h3>
+                <p>{{ answer }}</p>
+            </article>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+
+</html>
